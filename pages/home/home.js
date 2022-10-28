@@ -1,66 +1,27 @@
 // pages/home/home.js
 Page({
+  data: {
+    name:'coderwhy',
+    age:18,
+    students:[
+      {id:110,name:'red',age:12},
+      {id:111,name:'blue',age:14},
+      {id:112,name:'yellow',age:42},
+      {id:113,name:'pink',age:22}
+    ],
+    counter:0
+  },
+  handleBtnClick(){
+    // console.log('click');
+    // this.data.counter++  //错误做法
 
-    /**
-     * 页面的初始数据
-     */
-    data: {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面加载
-     */
-    onLoad(options) {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面初次渲染完成
-     */
-    onReady() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面显示
-     */
-    onShow() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面隐藏
-     */
-    onHide() {
-
-    },
-
-    /**
-     * 生命周期函数--监听页面卸载
-     */
-    onUnload() {
-
-    },
-
-    /**
-     * 页面相关事件处理函数--监听用户下拉动作
-     */
-    onPullDownRefresh() {
-
-    },
-
-    /**
-     * 页面上拉触底事件的处理函数
-     */
-    onReachBottom() {
-
-    },
-
-    /**
-     * 用户点击右上角分享
-     */
-    onShareAppMessage() {
-
-    }
+    this.setData({
+      counter:this.data.counter+1
+    })
+  },
+  handleSubtraction(){
+    this.setData({
+      counter:this.data.counter-1
+    })
+  }
 })
