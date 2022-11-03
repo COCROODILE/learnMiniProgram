@@ -3,5 +3,18 @@
   "projectname": "miniprogram",
   "setting": {
     "compileHotReLoad": true
+  },
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "分类界面",
+          "pathName": "pages/category/category",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
+        }
+      ]
+    }
   }
 }
