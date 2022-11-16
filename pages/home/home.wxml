@@ -1,3 +1,54 @@
 <!--pages/home/home.wxml-->
 <text class="title">hello world</text>
 <button size="mini">按钮</button>
+
+<!-- 常见事件 -->
+<view class="box"
+	  bind:touchstart="handleTouchStart"
+	  bind:touchmove="handleTouchMove"
+	  bind:touchend="handleTouchEnd"
+	  bind:tap="handleTap"
+	  bind:longpress="handleLongPress"></view>
+
+
+<!-- 事件对象的分析 -->
+<button size="mini"
+		bindtap="handleEventClick"
+		bindtouchend="handleEventEnd">事件对象</button>
+
+<!-- touches:当前屏幕上所有触摸点的列表 -->
+<!-- changedtouches:触发事件时改变的触摸点的集合 -->
+
+<view class="outer">
+	外层
+	<view class="inner" >
+		内层
+	</view>
+</view>
+
+<!-- 事件传递参数 -->
+<view class="container">
+	<block>
+		<view class="item"
+					wx:for="{{titles}}" 
+					wx:key="{{index}}"
+					bindtap="handleItemClick"
+					data-item="{{item}}"
+					data-index="{{index}}">
+			{{item}}
+		</view>
+	</block>
+</view>
+
+<!-- 事件捕获和事件冒泡 -->
+<!-- bind：一层层传递 -->
+<!-- catch：阻止事件进一步传递 -->
+<view class="box1" capture-bind:tap="handleCaptureBox1" bindtap="handleBindBox1">
+	<view class="box2" capture-catch:tap="handleCaptureBox2" bindtap="handleBindBox2">
+		<view class="box3" capture-bind:tap="handleCaptureBox3" bindtap="handleBindBox3"></view>
+	</view>
+</view>
+
+<!-- 使用自定义组件 -->
+<my-cpn></my-cpn>
+<my-cpn />
